@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import re
 import subprocess
 from pathlib import Path
@@ -19,7 +21,7 @@ if __name__ == '__main__':
         output_video = video
         output_video = re.sub(r'\.mkv$', '', output_video, flags=re.IGNORECASE)  # removes suffix
         # removes references to x264 in filenames
-        output_video = re.sub(r'\.H\.264-?', '', output_video, flags=re.IGNORECASE)
+        output_video = re.sub(r'\.H\.?264-?', '', output_video, flags=re.IGNORECASE)
         output_video = re.sub(r'\.AVC-?', '', output_video, flags=re.IGNORECASE)
         output_video = re.sub(r'\.x264-?', '', output_video, flags=re.IGNORECASE)
 
